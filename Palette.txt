@@ -1,0 +1,35 @@
+/* CSS HEX */
+--green-kelp: #293621;
+--aths-special: #e9eac5;
+--jaffa: #ec9c44;
+--olivine: #a1bc71;
+--camouflage-green: #76806b;
+--battleship-gray: #848c74;
+--bud: #a3ab9b;
+--spring-wood: #f6f6ef;
+--coriander: #bdc9a6;
+--eagle: #b4b49f;
+
+/* SCSS HEX */
+$green-kelp: #293621;
+$aths-special: #e9eac5;
+$jaffa: #ec9c44;
+$olivine: #a1bc71;
+$camouflage-green: #76806b;
+$battleship-gray: #848c74;
+$bud: #a3ab9b;
+$spring-wood: #f6f6ef;
+$coriander: #bdc9a6;
+$eagle: #b4b49f;
+
+/* SCSS RGB */
+$green-kelp: rgba(41,54,33,1);
+$aths-special: rgba(233,234,197,1);
+$jaffa: rgba(236,156,68,1);
+$olivine: rgba(161,188,113,1);
+$camouflage-green: rgba(118,128,107,1);
+$battleship-gray: rgba(132,140,116,1);
+$bud: rgba(163,171,155,1);
+$spring-wood: rgba(246,246,239,1);
+$coriander: rgba(189,201,166,1);
+$eagle: rgba(180,180,159,1);

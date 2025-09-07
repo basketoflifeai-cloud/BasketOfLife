@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Basket of Life • Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles/tokens.css" />
+    <link rel="stylesheet" href="src/styles/globals.css" />
+    <link rel="stylesheet" href="src/styles/chat.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="logo.png" alt="Basket of Life logo" />
+        <div class="brand-text">
+          <span class="brand-title">Basket of Life</span>
+          <span class="brand-sub">Chat</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.84 17.24l-1.8 1.79 1.79 1.79 1.8-1.79-1.79-1.79zM20 13h3v-2h-3v2zm-2.24 4.24l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM11 1h2v3h-2V1zm7.41 3.05l-1.79 1.79 1.8 1.8 1.79-1.8-1.8-1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.37 5.51A7.5 7.5 0 0017.5 18a7.5 7.5 0 005.12-1.98A9.5 9.5 0 019.37 5.51z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1><span class="hi">Meet your kitchen copilot.</span> Plan smarter, waste less.</h1>
+        <p class="hero-sub">Basket of Life turns groceries into meals with AI‑guided planning. This demo shows the conversation experience we’ll integrate with Activepieces.</p>
+          <div class="hero-ctas">
+            <button id="heroCtaBtn" class="btn-cta" data-message="Hi, what can you do?">Try the demo</button>
+          </div>
+      </div>
+    </section>
+
+    <main id="app" class="app">
+      <section id="starterGrid" class="starter-grid" aria-label="Message starters">
+        <button class="starter-card" data-message="Plan a quick 20-minute dinner">
+          <div class="starter-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm4.53 7.47l-1.06-1.06-3.47 3.47-1.06 1.06 1.06 1.06 3.47-3.47 1.06-1.06z"/></svg>
+          </div>
+          <span>Plan a quick 20‑minute dinner</span>
+        </button>
+        <button class="starter-card" data-message="Create a budget grocery list for 2">
+          <div class="starter-icon">
+            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          </div>
+          <span>Create a budget grocery list for 2</span>
+        </button>
+        <button class="starter-card" data-message="Ideas to reduce food waste this week">
+          <div class="starter-icon">
+            <svg viewBox="0 0 24 24"><path d="M15 9.86v2.27c0 1.45-1.18 2.64-2.64 2.64-1.45 0-2.63-1.18-2.63-2.63V9.86h5.27zM12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"/></svg>
+          </div>
+          <span>Ideas to reduce food waste this week</span>
+        </button>
+        <button class="starter-card" data-message="Healthy snacks with what I have">
+          <div class="starter-icon">
+           <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <span>Healthy snacks with what I have</span>
+        </button>
+      </section>
+
+      <section id="thread" class="thread" role="log" aria-live="polite" aria-relevant="additions"></section>
+    </main>
+
+    <div class="composer-wrap">
+      <form id="composer" class="composer" autocomplete="off">
+        <button type="button" class="icon-btn" id="attachBtn" title="Attach (placeholder)" aria-label="Attach">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 13a5 5 0 0010 0V6a3 3 0 10-6 0v7a1 1 0 002 0V6a1 1 0 112 0v7a3 3 0 11-6 0V6H7v7z"/></svg>
+        </button>
+        <textarea id="input" class="input" rows="1" placeholder="Send a message…"></textarea>
+        <div class="composer-actions">
+          <button type="submit" id="sendBtn" class="btn send" aria-label="Send">
+            <span class="send-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l20-9L2 3v7l14 2-14 2v7z"/></svg>
+            </span>
+            <span class="stop-text">Stop</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <button id="scrollDown" class="scroll-down" aria-label="Scroll to bottom" type="button" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <noscript>
+      JavaScript is required for the interactive chat.
+    </noscript>
+
+    <script src="src/js/app.js"></script>
+  </body>
+  </html>
+
+

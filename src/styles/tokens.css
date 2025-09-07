@@ -1,0 +1,41 @@
+:root {
+  --green-kelp: #293621;
+  --aths-special: #e9eac5;
+  --jaffa: #ec9c44;
+  --olivine: #a1bc71;
+  --camouflage-green: #76806b;
+  --battleship-gray: #848c74;
+  --bud: #a3ab9b;
+  --spring-wood: #f6f6ef;
+  --coriander: #bdc9a6;
+  --eagle: #b4b49f;
+
+  --bg: var(--spring-wood);
+  --surface: #ffffffcc;
+  --surface-strong: #ffffff;
+  --text: #1b1f1b;
+  --muted: var(--battleship-gray);
+  --accent: var(--jaffa);
+  --success: var(--olivine);
+
+  --radius: 16px;
+  --radius-pill: 9999px;
+  --shadow-1: 0 8px 24px rgba(0,0,0,.08);
+  --shadow-2: 0 12px 40px rgba(0,0,0,.12);
+}
+
+[data-theme="dark"] {
+  --bg: #121613;
+  --surface: #1a1f1bcc;
+  --surface-strong: #1c211d;
+  --text: #f3f5f3;
+  --muted: #aab3a6;
+  --shadow-1: 0 8px 24px rgba(0,0,0,.32);
+  --shadow-2: 0 12px 40px rgba(0,0,0,.48);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+}
+
+
