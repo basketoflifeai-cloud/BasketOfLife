@@ -8,7 +8,6 @@ const starterGridEl = document.getElementById('starterGrid');
 const composerForm = document.getElementById('composer');
 const inputEl = document.getElementById('input');
 const sendBtn = document.getElementById('sendBtn');
-const scrollDownBtn = document.getElementById('scrollDown');
 
 /** State */
 let isTyping = false;
@@ -57,6 +56,10 @@ function createBubble(content) {
   return bubble;
 }
 
+function scrollToBottom() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
 function addMessage({ role, content }) {
   const id = uid();
   const row = document.createElement('div');
@@ -67,11 +70,7 @@ function addMessage({ role, content }) {
   row.dataset.id = id;
   threadEl.appendChild(row);
   messages.push({ id, role, content, createdAt: now() });
-
-  // Use a short timeout to ensure the DOM has updated before we scroll
-  setTimeout(() => {
-    scrollToBottom();
-  }, 50);
+  scrollToBottom();
 }
 
 function showTyping() {
@@ -91,11 +90,7 @@ function showTyping() {
   bubble.appendChild(wrap);
   row.appendChild(bubble);
   threadEl.appendChild(row);
-
-  // Use a short timeout to ensure the DOM has updated before we scroll
-  setTimeout(() => {
-    scrollToBottom();
-  }, 50);
+  scrollToBottom();
 }
 
 function hideTyping() {
@@ -178,40 +173,6 @@ function autoResize() {
 inputEl?.addEventListener('input', autoResize);
 queueMicrotask(autoResize);
 
-// Scroll to bottom logic (robust across browsers)
-const rootScrollEl = document.scrollingElement || document.documentElement;
-
-function atBottom() {
-  const scrollPosition = rootScrollEl.scrollTop + window.innerHeight;
-  const totalHeight = rootScrollEl.scrollHeight;
-  return totalHeight - scrollPosition < 150; // threshold
-}
-
-function scrollToBottom() {
-  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) {
-    rootScrollEl.scrollTop = rootScrollEl.scrollHeight;
-    updateScrollButton();
-    return;
-  }
-  rootScrollEl.scrollTo({ top: rootScrollEl.scrollHeight, behavior: 'smooth' });
-  // Update button state after scrolling animation likely finishes
-  setTimeout(updateScrollButton, 400);
-}
-
-function updateScrollButton() {
-  if (!scrollDownBtn) return;
-  scrollDownBtn.hidden = atBottom();
-}
-
-// Initialize button state and listeners
-updateScrollButton();
-window.addEventListener('scroll', updateScrollButton, { passive: true });
-window.addEventListener('resize', updateScrollButton, { passive: true });
-scrollDownBtn?.addEventListener('click', (e) => {
-  e.preventDefault();
-  scrollToBottom();
-});
 
 // Expose for integration with Activepieces later
 window.BasketChat = { send };

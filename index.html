@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>Basket of Life • Chat</title>
+    <title>سلة الحياة • محادثة</title>
+    <link rel="icon" href="logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="src/styles/tokens.css" />
     <link rel="stylesheet" href="src/styles/globals.css" />
     <link rel="stylesheet" href="src/styles/chat.css" />
@@ -21,7 +22,7 @@
 
     <header class="site-header">
       <div class="brand">
-        <img class="brand-logo" src="logo.png" alt="Basket of Life logo" />
+        <img class="brand-logo" src="logo.png" alt="شعار سلة الحياة" />
         <div class="brand-text">
           <span class="brand-title">Basket of Life</span>
           <span class="brand-sub">Chat</span>
@@ -37,39 +38,38 @@
 
     <section class="hero" id="hero">
       <div class="hero-inner">
-        <h1><span class="hi">Meet your kitchen copilot.</span> Plan smarter, waste less.</h1>
-        <p class="hero-sub">Basket of Life turns groceries into meals with AI‑guided planning. This demo shows the conversation experience we’ll integrate with Activepieces.</p>
-          <div class="hero-ctas">
-            <button id="heroCtaBtn" class="btn-cta" data-message="Hi, what can you do?">Try the demo</button>
-          </div>
+        <h1><span class="hi">لديك سؤال عن الفراولة؟</span> لدي كل الإجابات</h1>
+        <div class="hero-ctas">
+          <button id="heroCtaBtn" class="btn-cta" data-message="مرحباً، ماذا يمكنك أن تفعل؟">ابدأ بالسؤال</button>
+        </div>
       </div>
     </section>
 
     <main id="app" class="app">
       <section id="starterGrid" class="starter-grid" aria-label="Message starters">
-        <button class="starter-card" data-message="Plan a quick 20-minute dinner">
+        <button class="starter-card" data-message="من أين جاءت هذه الفراولة؟">
           <div class="starter-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm4.53 7.47l-1.06-1.06-3.47 3.47-1.06 1.06 1.06 1.06 3.47-3.47 1.06-1.06z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </div>
-          <span>Plan a quick 20‑minute dinner</span>
+          <span>من أين جاءت هذه الفراولة؟</span>
         </button>
-        <button class="starter-card" data-message="Create a budget grocery list for 2">
+        <button class="starter-card" data-message="متى تم حصادها؟">
           <div class="starter-icon">
-            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
           </div>
-          <span>Create a budget grocery list for 2</span>
+          <span>متى تم حصادها؟</span>
         </button>
-        <button class="starter-card" data-message="Ideas to reduce food waste this week">
+        <button class="starter-card" data-message="هل يمكن أن تسبب أي حساسية؟">
           <div class="starter-icon">
-            <svg viewBox="0 0 24 24"><path d="M15 9.86v2.27c0 1.45-1.18 2.64-2.64 2.64-1.45 0-2.63-1.18-2.63-2.63V9.86h5.27zM12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
           </div>
-          <span>Ideas to reduce food waste this week</span>
+          <span>هل يمكن أن تسبب أي حساسية؟</span>
         </button>
-        <button class="starter-card" data-message="Healthy snacks with what I have">
+        <button class="starter-card" data-message="هل يمكن استخدامها في العصائر؟">
           <div class="starter-icon">
-           <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+           <svg viewBox="0 0 24 24"><path d="M11 13v6H6v2h12v-2h-5v-6l8-8V3H3v2l8 8zM7.5 7l-2-2h13l-2 2h-9z"/></svg>
           </div>
-          <span>Healthy snacks with what I have</span>
+          <span>هل يمكن استخدامها في العصائر؟</span>
         </button>
       </section>
 
@@ -78,24 +78,18 @@
 
     <div class="composer-wrap">
       <form id="composer" class="composer" autocomplete="off">
-        <button type="button" class="icon-btn" id="attachBtn" title="Attach (placeholder)" aria-label="Attach">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 13a5 5 0 0010 0V6a3 3 0 10-6 0v7a1 1 0 002 0V6a1 1 0 112 0v7a3 3 0 11-6 0V6H7v7z"/></svg>
-        </button>
-        <textarea id="input" class="input" rows="1" placeholder="Send a message…"></textarea>
+        <textarea id="input" class="input" rows="1" placeholder="أرسل رسالة…"></textarea>
         <div class="composer-actions">
           <button type="submit" id="sendBtn" class="btn send" aria-label="Send">
             <span class="send-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l20-9L2 3v7l14 2-14 2v7z"/></svg>
             </span>
-            <span class="stop-text">Stop</span>
+            <span class="stop-text">توقف</span>
           </button>
         </div>
       </form>
     </div>
 
-    <button id="scrollDown" class="scroll-down" aria-label="Scroll to bottom" type="button" hidden>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
 
     <noscript>
       JavaScript is required for the interactive chat.
