@@ -10,6 +10,7 @@ body {
               radial-gradient(1000px 700px at 90% 20%, color-mix(in oklab, var(--coriander) 70%, transparent) 0%, transparent 60%),
               var(--bg);
   min-height: 100dvh;
+  direction: rtl;
 }
 
 /* Background decorative blobs */
@@ -91,10 +92,12 @@ body {
 
 /* Thread */
 .thread { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; flex: 1; }
-.msg { display: flex; gap: 10px; align-items: flex-end; }
+.msg { display: flex; gap: 10px; align-items: center; }
 .msg.user { justify-content: flex-end; }
+.msg.assistant { justify-content: flex-start; }
 .avatar { width: 28px; height: 28px; border-radius: 50%; background: color-mix(in oklab, var(--accent) 30%, #fff); box-shadow: var(--shadow-1); display: grid; place-items: center; font-weight: 700; color: var(--text); }
-.bubble { max-width: min(78%, 720px); padding: 12px 14px; border-radius: 18px; background: var(--surface-strong); box-shadow: var(--shadow-1); border: 1px solid color-mix(in oklab, var(--text) 10%, transparent); line-height: 1.45; animation: pop .2s ease-out; }
+.strawberry-avatar { width: 32px; height: 32px; border-radius: 0; background: none; box-shadow: none; object-fit: contain; }
+.bubble { max-width: min(78%, 720px); padding: 12px 14px; border-radius: 18px; background: var(--surface-strong); box-shadow: var(--shadow-1); border: 1px solid color-mix(in oklab, var(--text) 10%, transparent); line-height: 1.45; animation: pop .2s ease-out; text-align: right; }
 .msg.user .bubble { background: color-mix(in oklab, var(--accent) 18%, var(--surface-strong)); border-color: color-mix(in oklab, var(--accent) 35%, transparent); }
 @keyframes pop { from { transform: translateY(4px) scale(.98); opacity: .0; } to { transform: translateY(0) scale(1); opacity: 1; } }
 
@@ -107,9 +110,9 @@ body {
 
 /* Composer */
 .composer-wrap { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px 18px; background: linear-gradient(to top, var(--bg) 30%, color-mix(in oklab, var(--bg) 95%, transparent) 70%, transparent); }
-.composer { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px; border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-2); border: 1px solid color-mix(in oklab, var(--text) 10%, transparent); }
-.input { resize: none; border: none; outline: none; background: transparent; color: var(--text); font: inherit; padding: 10px 2px; max-height: 40dvh; overflow-y: hidden; }
-.input::placeholder { text-align: right; }
+.composer { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; padding: 10px; border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-2); border: 1px solid color-mix(in oklab, var(--text) 10%, transparent); }
+.input { resize: none; border: none; outline: none; background: transparent; color: var(--text); font: inherit; padding: 10px 2px; max-height: 40dvh; overflow-y: hidden; text-align: right; }
+.input::placeholder { color: var(--muted); }
 .composer-actions { display: flex; align-items: center; gap: 8px; }
 .btn { border: none; cursor: pointer; border-radius: 12px; padding: 10px 14px; font-weight: 600; transition: background-color .2s ease, color .2s ease; }
 .btn.send {
