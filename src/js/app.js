@@ -70,7 +70,7 @@ function addMessage({ role, content }) {
   const row = document.createElement('div');
   row.className = `msg ${role}`;
   
-  // Add avatar only for assistant (strawberry), no avatar for user
+  // Add avatar only for assistant (strawberry), no avatar for user s
   if (role === 'assistant') {
     const avatar = createAvatar('assistant');
     if (avatar) row.appendChild(avatar);
