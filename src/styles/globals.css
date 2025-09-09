@@ -32,7 +32,7 @@ body {
 .brand-logo { width: 96px; height: 96px; object-fit: contain; filter: drop-shadow(0 1px 0 rgba(0,0,0,.05)); }
 .brand-title { font-family: Outfit, Inter, system-ui; font-weight: 700; letter-spacing: .2px; font-size: clamp(1.1rem, 2.8vw, 1.35rem); }
 .brand-sub { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: color-mix(in oklab, var(--accent) 18%, transparent); color: color-mix(in oklab, var(--text) 60%, transparent); font-size: 13px; }
-.header-actions { display: flex; align-items: center; gap: 8px; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
 
 .theme-toggle { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--text) 10%, transparent); background: var(--surface); box-shadow: var(--shadow-1); color: var(--text); cursor: pointer; }
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -40,6 +40,91 @@ body {
 [data-theme="dark"] .icon-sun { display: none; }
 :root .icon-moon { display: none; }
 [data-theme="dark"] .icon-moon { display: block; }
+
+/* User Type Switcher */
+.user-type-switcher { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.user-type-labels { display: flex; gap: 8px; font-size: 12px; font-weight: 600; }
+.user-type-label { 
+  color: color-mix(in oklab, var(--text) 60%, transparent); 
+  transition: color .2s ease;
+  cursor: pointer;
+}
+.user-type-label[data-type="buyer"] { 
+  color: var(--text); 
+}
+.user-type-label[data-type="farmer"] { 
+  color: color-mix(in oklab, var(--text) 60%, transparent); 
+}
+
+.user-type-toggle {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+  background: var(--surface);
+  box-shadow: var(--shadow-1);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.user-type-toggle:focus-visible { 
+  outline: 2px solid var(--accent); 
+  outline-offset: 2px; 
+}
+
+.toggle-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), opacity .2s ease;
+  top: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #1a150d;
+}
+
+.buyer-icon {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+.farmer-icon {
+  transform: translateX(34px);
+  opacity: 0;
+}
+
+.user-type-toggle[data-user-type="farmer"] .buyer-icon {
+  transform: translateX(2px);
+  opacity: 0;
+}
+
+.user-type-toggle[data-user-type="farmer"] .farmer-icon {
+  transform: translateX(34px);
+  opacity: 1;
+}
+
+.user-type-toggle:hover {
+  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+  box-shadow: var(--shadow-2);
+}
 
 /* Hero Section */
 .hero { text-align: center; padding: 8vh 24px 10vh; }
