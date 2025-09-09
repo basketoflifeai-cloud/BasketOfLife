@@ -117,7 +117,7 @@ function hideTyping() {
 }
 
 async function sendToWebhook(userMessage, abortController) {
-  const webhookUrl = 'https://cloud.activepieces.com/api/v1/webhooks/Mv38eBdOp6AP7ctrdOGOP/sync';
+  const webhookUrl = 'https://root2222.app.n8n.cloud/webhook/700e78ab-9ef1-4b65-a98a-c6217ad1f1df';
   
   // Prepare conversation context - include all previous messages plus the new user message
   const conversationContext = [...messages, { role: 'user', content: userMessage }];
