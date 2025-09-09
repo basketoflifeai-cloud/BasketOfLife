@@ -46,7 +46,6 @@ function applyUserType(userType) {
 
 function updateContentForUserType(userType) {
   const heroEl = document.querySelector('.hero h1');
-  const heroCtaBtn = document.getElementById('heroCtaBtn');
   const inputEl = document.getElementById('input');
   const starterCards = document.querySelectorAll('.starter-card');
   
@@ -55,12 +54,8 @@ function updateContentForUserType(userType) {
     if (heroEl) {
       heroEl.innerHTML = '<span class="hi">لديك سؤال حول العبوات؟</span> لدي كل الإجابات للمزارعين';
     }
-    if (heroCtaBtn) {
-      heroCtaBtn.textContent = 'ابدأ كمزارع';
-      heroCtaBtn.setAttribute('data-message', 'مرحباً، أنا مزارع وأحتاج مساعدة');
-    }
     if (inputEl) {
-      inputEl.placeholder = 'اسأل عن زراعة الفراولة…';
+      inputEl.placeholder = 'اسأل عن العبوات…';
     }
     
     // Update starter cards for farmers
@@ -83,10 +78,6 @@ function updateContentForUserType(userType) {
     // Update content for buyer (default)
     if (heroEl) {
       heroEl.innerHTML = '<span class="hi">لديك سؤال عن الفراولة؟</span> لدي كل الإجابات للمشترين';
-    }
-    if (heroCtaBtn) {
-      heroCtaBtn.textContent = 'ابدأ كمشتري';
-      heroCtaBtn.setAttribute('data-message', 'مرحباً، أنا مشتري وأريد معرفة المزيد');
     }
     if (inputEl) {
       inputEl.placeholder = 'اسأل عن شراء الفراولة…';
@@ -315,12 +306,7 @@ starterGridEl?.addEventListener('click', async (e) => {
   await send(msg);
 });
 
-// Hero CTA button click
-const heroCtaBtn = document.getElementById('heroCtaBtn');
-heroCtaBtn?.addEventListener('click', async () => {
-  const msg = heroCtaBtn.getAttribute('data-message') || 'Hi, what can you do?';
-  await send(msg);
-});
+// Hero CTA button removed
 
 // Composer submit
 composerForm?.addEventListener('submit', async (e) => {
