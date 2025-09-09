@@ -117,7 +117,7 @@ function hideTyping() {
 }
 
 async function sendToWebhook(userMessage, abortController) {
-  const webhookUrl = 'https://root2222.app.n8n.cloud/webhook/700e78ab-9ef1-4b65-a98a-c6217ad1f1df';
+  const webhookUrl = 'https://hook.eu2.make.com/8ydjx0yjpi6r8npacsvweup1vsfnqef6';
   
   // Prepare conversation context - include all previous messages plus the new user message
   const conversationContext = [...messages, { role: 'user', content: userMessage }];
