@@ -106,11 +106,12 @@ body {
 .user-type-label {
   padding: 6px 12px;
   border-radius: 18px;
-  color: color-mix(in oklab, var(--text) 65%, transparent);
+  color: var(--text);
   transition: all .3s ease;
   white-space: nowrap;
   position: relative;
   z-index: 2;
+  font-weight: 600;
 }
 
 .user-type-slider {
@@ -138,13 +139,14 @@ body {
 }
 
 .user-type-toggle[data-user-type="buyer"] .user-type-label.buyer {
-  color: color-mix(in oklab, var(--surface) 100%, var(--bg));
+  color: #ffffff;
   font-weight: 700;
-  text-shadow: 0 1px 2px color-mix(in oklab, var(--accent) 30%, transparent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .user-type-toggle[data-user-type="buyer"] .user-type-label.farmer {
-  color: color-mix(in oklab, var(--text) 55%, transparent);
+  color: color-mix(in oklab, var(--text) 100%, transparent);
+  font-weight: 600;
 }
 
 /* When farmer is selected */
@@ -161,13 +163,14 @@ body {
 }
 
 .user-type-toggle[data-user-type="farmer"] .user-type-label.farmer {
-  color: color-mix(in oklab, var(--surface) 100%, var(--bg));
+  color: #ffffff;
   font-weight: 700;
-  text-shadow: 0 1px 2px color-mix(in oklab, var(--coriander) 30%, transparent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .user-type-toggle[data-user-type="farmer"] .user-type-label.buyer {
-  color: color-mix(in oklab, var(--text) 55%, transparent);
+  color: color-mix(in oklab, var(--text) 100%, transparent);
+  font-weight: 600;
 }
 
 /* Dark mode specific adjustments */
@@ -201,11 +204,18 @@ body {
 
 [data-theme="dark"] .user-type-toggle[data-user-type="buyer"] .user-type-label.buyer,
 [data-theme="dark"] .user-type-toggle[data-user-type="farmer"] .user-type-label.farmer {
-  color: color-mix(in oklab, var(--bg) 100%, var(--surface));
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .user-type-label {
-  color: color-mix(in oklab, var(--text) 60%, transparent);
+  color: color-mix(in oklab, var(--text) 85%, transparent);
+}
+
+[data-theme="dark"] .user-type-toggle[data-user-type="buyer"] .user-type-label.farmer,
+[data-theme="dark"] .user-type-toggle[data-user-type="farmer"] .user-type-label.buyer {
+  color: color-mix(in oklab, var(--text) 80%, transparent);
+  font-weight: 600;
 }
 
 /* Hero Section */

@@ -53,7 +53,7 @@ function updateContentForUserType(userType) {
   if (userType === 'farmer') {
     // Update content for farmer
     if (heroEl) {
-      heroEl.innerHTML = '<span class="hi">لديك سؤال حول زراعة الفراولة؟</span> لدي كل الإجابات للمزارعين';
+      heroEl.innerHTML = '<span class="hi">لديك سؤال حول العبوات؟</span> لدي كل الإجابات للمزارعين';
     }
     if (heroCtaBtn) {
       heroCtaBtn.textContent = 'ابدأ كمزارع';
@@ -65,10 +65,10 @@ function updateContentForUserType(userType) {
     
     // Update starter cards for farmers
     const farmerStarters = [
-      { text: 'ما هي أفضل طرق زراعة الفراولة؟', message: 'ما هي أفضل طرق زراعة الفراولة؟' },
-      { text: 'متى هو الوقت المناسب للحصاد؟', message: 'متى هو الوقت المناسب لحصاد الفراولة؟' },
-      { text: 'كيف أحمي المحصول من الآفات؟', message: 'كيف أحمي محصول الفراولة من الآفات؟' },
-      { text: 'ما هي أفضل أنواع التربة للفراولة؟', message: 'ما هي أفضل أنواع التربة لزراعة الفراولة؟' }
+      { text: 'ما هي المواد المستخدمة في تصنيع عبوات؟', message: 'ما هي المواد المستخدمة في تصنيع عبوات؟' },
+      { text: 'هل العبوات صديقة للبيئة؟', message: 'هل العبوات صديقة للبيئة؟' },
+      { text: 'هل العبوات قابلة لإعادة التدوير؟', message: 'هل العبوات قابلة لإعادة التدوير؟' },
+      { text: 'هل يمكن استخدام العبوات مع جميع أنواع الخضار والفواكه؟', message: 'هل يمكن استخدام العبوات مع جميع أنواع الخضار والفواكه؟' }
     ];
     
     starterCards.forEach((card, index) => {
