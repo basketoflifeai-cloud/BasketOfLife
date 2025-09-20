@@ -200,8 +200,8 @@ function hideTyping() {
 async function sendToWebhook(userMessage, abortController) {
   // Different webhooks for different user types
   const webhookUrls = {
-    buyer: 'https://cloud.activepieces.com/api/v1/webhooks/Mv38eBdOp6AP7ctrdOGOP/sync',
-    farmer: 'https://cloud.activepieces.com/api/v1/webhooks/yo1lrTNx9eLwaqoHogFmP/sync' // TODO: Replace YOUR_FARMER_WEBHOOK_ID_HERE with your actual farmer webhook ID
+    buyer: 'https://cloud.activepieces.com/api/v1/webhooks/PHoFzs5aUx2KhxS25e93a/sync',
+    farmer: 'https://cloud.activepieces.com/api/v1/webhooks/wXG1TNjjfbiFYjDLyN6Yh/sync' // TODO: Replace YOUR_FARMER_WEBHOOK_ID_HERE with your actual farmer webhook ID
   };
   
   const webhookUrl = webhookUrls[currentUserType];
